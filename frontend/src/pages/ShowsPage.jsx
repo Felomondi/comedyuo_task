@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { fetchShows } from '../api.js';
 import Filters from '../components/Filters.jsx';
@@ -58,8 +59,13 @@ export default function ShowsPage() {
           </p>
         </div>
 
-        <div className="page-filters">
-          <Filters active={filter} onChange={setFilter} />
+        <div className="page-header-actions">
+          <div className="page-filters">
+            <Filters active={filter} onChange={setFilter} />
+          </div>
+          <Link to="/tickets" className="btn btn-tickets-link">
+            Get Tickets
+          </Link>
         </div>
       </header>
 
